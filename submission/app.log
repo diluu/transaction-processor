@@ -1,0 +1,29 @@
+2020-03-29 16:52:26.086  INFO 11268 --- [main] c.t.TransactionProcessorApplication      : Starting TransactionProcessorApplication on DESKTOP-39GCS9E with PID 11268 (C:\Users\User\eclipse-workspace\transaction-processor\target\classes started by User in C:\Users\User\eclipse-workspace\transaction-processor)
+2020-03-29 16:52:26.096 DEBUG 11268 --- [main] c.t.TransactionProcessorApplication      : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-03-29 16:52:26.098  INFO 11268 --- [main] c.t.TransactionProcessorApplication      : No active profile set, falling back to default profiles: default
+2020-03-29 16:52:28.050  INFO 11268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-29 16:52:28.272  INFO 11268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 195ms. Found 4 JPA repository interfaces.
+2020-03-29 16:52:30.260  INFO 11268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 16:52:30.289  INFO 11268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 16:52:30.290  INFO 11268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-03-29 16:52:31.104  INFO 11268 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-03-29 16:52:31.120  INFO 11268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 16:52:31.122  INFO 11268 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4866 ms
+2020-03-29 16:52:31.496  INFO 11268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 16:52:31.921  INFO 11268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 16:52:32.155  INFO 11268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-29 16:52:32.511  INFO 11268 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-29 16:52:33.283  INFO 11268 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-29 16:52:33.676  INFO 11268 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-03-29 16:52:37.187  INFO 11268 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-29 16:52:37.211  INFO 11268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-29 16:52:38.397  WARN 11268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-29 16:52:38.809  INFO 11268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 16:52:39.399  INFO 11268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 16:52:39.406  INFO 11268 --- [main] c.t.TransactionProcessorApplication      : Started TransactionProcessorApplication in 15.093 seconds (JVM running for 15.963)
+2020-03-29 16:52:45.418  INFO 11268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 16:52:45.420  INFO 11268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 16:52:45.449  INFO 11268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-03-29 16:52:45.545 DEBUG 11268 --- [http-nio-8080-exec-1] c.t.c.TransactionProcessController       : in request transactions()
+2020-03-29 16:52:59.198 DEBUG 11268 --- [http-nio-8080-exec-3] c.t.c.TransactionProcessController       : in post request uploadFile()
+2020-03-29 16:52:59.212 DEBUG 11268 --- [http-nio-8080-exec-3] c.t.s.TransactionProcessorServiceImpl    : in method processInputFile()

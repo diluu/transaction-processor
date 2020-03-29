@@ -1,0 +1,4 @@
+Client_Information,Product_information,Total_Transaction_Amount
+1234(CL)account:0003-0001,CME-FU-N1(expiry: 2010-09-10),285
+4321(CL)account:0003-0001,CME-FU-N1(expiry: 2010-09-10),-79
+1234(CL)account:0003-0001,CME-FU-NK.(expiry: 2010-09-10),-215
