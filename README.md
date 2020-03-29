@@ -1,5 +1,5 @@
 ==============================================================
-Technical Task for Processing Future Transactions
+#Technical Task for Processing Future Transactions
 ==============================================================
 *  My solution is build with Java8 and Spring Boot 2.2.6
 *  Maven is used as the build tool
@@ -13,7 +13,7 @@ Technical Task for Processing Future Transactions
 *  Sample daily summary report 'Ouput.csv' and a sample log file can be found in submission directory
 
 ==============================================================
-Instruction to build and run the application
+#Instruction to build and run the application
 ==============================================================
 *  run.sh file does three steps
     - package the spring boot prokect
@@ -33,12 +33,12 @@ Instruction to build and run the application
 
 
 =============================================================
-Assumptions Made
+#Assumptions Made
 =============================================================
 *  Transaction amount was calculated as (Long quantity - Short quantity) as given in the requirement specification
 
 ============================================================
-Enhancements and known issues
+#Enhancements and known issues
 ============================================================
 * Due to the limited time the UI is done as plain HTML with JQuery only used for date picker
 * Security features such as storing plain passwords in docker-compose files are not addressed
