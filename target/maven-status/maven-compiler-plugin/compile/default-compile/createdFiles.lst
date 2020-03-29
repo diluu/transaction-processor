@@ -1,0 +1,14 @@
+com\technicaltest\services\TransactionProcessorServiceImpl.class
+com\technicaltest\services\ReportGenerationService.class
+com\technicaltest\repositories\ClientAccountRepository.class
+com\technicaltest\objects\ClientAccount.class
+com\technicaltest\repositories\ProductRepository.class
+com\technicaltest\services\ReportGenerationServiceImpl.class
+com\technicaltest\objects\Transaction.class
+com\technicaltest\repositories\ClientRepository.class
+com\technicaltest\services\TransactionProcessorService.class
+com\technicaltest\controllers\TransactionProcessController.class
+com\technicaltest\objects\Client.class
+com\technicaltest\objects\Product.class
+com\technicaltest\repositories\TransactionRepository.class
+com\technicaltest\TransactionProcessorApplication.class

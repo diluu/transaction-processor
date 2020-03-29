@@ -1,0 +1,26 @@
+version: "3"
+services:
+ postgres: 
+  image: postgres:latest
+  volumes:
+   - ./init:/docker-entrypoint-initdb.d/
+  ports:
+   - 5434:5432
+  environment:
+   POSTGRES_USER: 'user'
+   POSTGRES_PASSWORD: 'password'
+   POSTGRES_DB: 'bank_transactions'
+    
+ trans_processor:
+  build:
+   context: .
+   dockerfile: Dockerfile
+  ports:
+   - 8080:8080
+  environment:
+   POSTGRES_DB_USER: 'user'
+   POSTGRES_DB_PASSWORD: 'password'
+   POSTGRES_DB_URL: 'jdbc:postgresql://postgres/bank_transactions'
+  depends_on:
+   - postgres
+
