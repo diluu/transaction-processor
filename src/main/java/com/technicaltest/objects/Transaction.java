@@ -18,33 +18,31 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="transaction")
+@Table(name = "transaction")
 public class Transaction {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRANS_SEQ")
-	@SequenceGenerator(sequenceName = "transaction_id_seq", allocationSize = 1, name="TRANS_SEQ")
+	@SequenceGenerator(sequenceName = "transaction_id_seq", allocationSize = 1, name = "TRANS_SEQ")
 	private Long id;
-	
-	@Column(name="transacton_date")
+
+	@Column(name = "transacton_date")
 	private LocalDate transactionDate;
-	
+
 	@ManyToOne
-	@JoinColumn(name="product_id", nullable = false)
+	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
-	
+
 	@ManyToOne
-	@JoinColumn(name="client_id", nullable = false)
+	@JoinColumn(name = "client_id", nullable = false)
 	private Client client;
-	
+
 	@ManyToOne
-	@JoinColumn(name="client_account_id", nullable = false)
+	@JoinColumn(name = "client_account_id", nullable = false)
 	private ClientAccount clientAccount;
-	
-	@Column(name="amount")
+
+	@Column(name = "amount")
 	private Long transactionAmount;
-	
-	
 
 	public Long getId() {
 		return id;
@@ -74,8 +72,6 @@ public class Transaction {
 		this.client = client;
 	}
 
-	
-
 	public Long getTransactionAmount() {
 		return transactionAmount;
 	}
@@ -91,7 +87,5 @@ public class Transaction {
 	public void setClientAccount(ClientAccount clientAccount) {
 		this.clientAccount = clientAccount;
 	}
-	
-	
 
 }

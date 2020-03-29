@@ -17,24 +17,24 @@ import javax.validation.constraints.Size;
  *
  */
 @Entity
-@Table(name="client_account")
+@Table(name = "client_account")
 public class ClientAccount {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENT_ACC_SEQ")
-	@SequenceGenerator(sequenceName = "client_account_id_seq", allocationSize = 1, name="CLIENT_ACC_SEQ")
+	@SequenceGenerator(sequenceName = "client_account_id_seq", allocationSize = 1, name = "CLIENT_ACC_SEQ")
 	private Long id;
-	
-	@Column(name="account_number")
+
+	@Column(name = "account_number")
 	@Size(min = 4, max = 4)
 	private String accountNumber;
-	
-	@Column(name="sub_account_number")
+
+	@Column(name = "sub_account_number")
 	@Size(min = 4, max = 4)
 	private String subAccountNumber;
-	
+
 	@ManyToOne
-	@JoinColumn(name="client_id", nullable = false)
+	@JoinColumn(name = "client_id", nullable = false)
 	private Client client;
 
 	public String getAccountNumber() {
@@ -64,7 +64,7 @@ public class ClientAccount {
 	public Long getId() {
 		return id;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		int hash = 7;
@@ -85,15 +85,13 @@ public class ClientAccount {
 		if (this.getClass() != obj.getClass())
 			return false;
 		ClientAccount ca = (ClientAccount) obj;
-		return client.equals(ca.client) && accountNumber.equals(ca.accountNumber) && subAccountNumber.equals(ca.subAccountNumber);
+		return client.equals(ca.client) && accountNumber.equals(ca.accountNumber)
+				&& subAccountNumber.equals(ca.subAccountNumber);
 	}
 
 	@Override
 	public String toString() {
-		return client + "account:" +accountNumber+ "-" + subAccountNumber;
+		return client + "account:" + accountNumber + "-" + subAccountNumber;
 	}
-	
-	
-
 
 }

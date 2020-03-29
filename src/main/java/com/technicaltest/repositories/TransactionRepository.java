@@ -7,11 +7,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.technicaltest.objects.Transaction;
 
-public interface TransactionRepository  extends CrudRepository<Transaction, Long>{
-	
+public interface TransactionRepository extends CrudRepository<Transaction, Long> {
+
 	/**
 	 * 
 	 * Finds transactions by transactionDate
+	 * 
 	 * @param transactionDate a LocalDate object as the query parameter
 	 * @return a list of Transactions
 	 */

@@ -43,9 +43,9 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 	private TransactionRepository transactionRepository;
 
 	/**
-	 * Creates a client object using the fields in given line
-	 * Adds it to the clients list
-	 * If the client is already in the list use it
+	 * Creates a client object using the fields in given line Adds it to the clients
+	 * list If the client is already in the list use it
+	 * 
 	 * @param clients
 	 * @param line
 	 * @return
@@ -66,9 +66,9 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 	}
 
 	/**
-	 * Creates a ClientAccount object using the fields in given line
-	 * Adds it to the clientAccounts list
-	 * If the clientAccount is already in the list use it
+	 * Creates a ClientAccount object using the fields in given line Adds it to the
+	 * clientAccounts list If the clientAccount is already in the list use it
+	 * 
 	 * @param clientAccounts
 	 * @param line
 	 * @param client
@@ -92,9 +92,9 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 
 	/**
 	 * 
-	 * Creates a Product object using the fields in given line
-	 * Adds it to the products list
-	 * If the product is already in the list use it
+	 * Creates a Product object using the fields in given line Adds it to the
+	 * products list If the product is already in the list use it
+	 * 
 	 * @param products
 	 * @param line
 	 * @return
@@ -120,14 +120,15 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 
 	/**
 	 * Create a transaction using the fields in the given line
+	 * 
 	 * @param transactions
 	 * @param line
 	 * @param client
 	 * @param account
 	 * @param product
 	 */
-	private void createTransaction(List<Transaction> transactions, String line, Client client,
-			ClientAccount account, Product product) {
+	private void createTransaction(List<Transaction> transactions, String line, Client client, ClientAccount account,
+			Product product) {
 		long longQuantity = Long.valueOf(line.substring(52, 62));
 		long shortQuantity = Long.valueOf(line.substring(63, 73));
 		LocalDate transactionDate = LocalDate.parse(line.substring(121, 129), FORMATTER);
@@ -144,13 +145,15 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 	/**
 	 * 
 	 * Read the input file line by line and add records to the database
+	 * 
 	 * @param inputFile input text file
 	 * @throws IOException
 	 */
 	public void processInputFile(byte[] inputFile) throws IOException {
 		LOGGER.debug("in method processInputFile()");
 
-		//Keep clients, clientAccounts, products and transactions in memory and save as batches
+		// Keep clients, clientAccounts, products and transactions in memory and save as
+		// batches
 		List<Client> clients = new ArrayList<>();
 		List<ClientAccount> clientAccounts = new ArrayList<>();
 		List<Product> products = new ArrayList<>();

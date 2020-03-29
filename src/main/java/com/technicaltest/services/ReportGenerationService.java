@@ -5,12 +5,13 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 
 public interface ReportGenerationService {
-	
+
 	/**
 	 * 
 	 * Generate Daily Summary Report as a CSV file
+	 * 
 	 * @param writer PrintWriter of the HttpServeltResponse
-	 * @param date the LocalDate to which the report needs to be generated
+	 * @param date   the LocalDate to which the report needs to be generated
 	 * @throws IOException
 	 */
 	void generateDailySummaryReport(PrintWriter writer, LocalDate date) throws IOException;

@@ -39,6 +39,7 @@ public class TransactionProcessController {
 	/**
 	 * 
 	 * Request method handling upload of input text file
+	 * 
 	 * @param file inputfile
 	 */
 	@PostMapping("/upload")
@@ -59,12 +60,12 @@ public class TransactionProcessController {
 	/**
 	 * 
 	 * Request method handling download of summary report csv file
-	 * @param date the date to which the report needs to be generated
+	 * 
+	 * @param date     the date to which the report needs to be generated
 	 * @param response HTTPSeervletResponse to write the file to
 	 */
 	@PostMapping("/download/Output.csv")
-	public void downloadDailySummaryReport(@RequestParam("date") String date, HttpServletResponse response)
-			 {
+	public void downloadDailySummaryReport(@RequestParam("date") String date, HttpServletResponse response) {
 		response.setContentType("text/csv");
 		response.setHeader("Content-Disposition", "attachment; file=Output.csv");
 

@@ -104,7 +104,5 @@ public class Product {
 	public String toString() {
 		return exchangeCode + "-" + productGroupCode + "-" + symbol + "(expiry: " + expirationDate + ")";
 	}
-	
-	
 
 }

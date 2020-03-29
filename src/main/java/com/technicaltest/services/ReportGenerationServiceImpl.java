@@ -39,10 +39,10 @@ public class ReportGenerationServiceImpl implements ReportGenerationService {
 	 */
 	@Override
 	public void generateDailySummaryReport(PrintWriter writer, LocalDate date) throws IOException {
-		//Find all transactions for the given date
+		// Find all transactions for the given date
 		List<Transaction> transactions = transactionRepository.findByTransactionDate(date);
 
-		//Group them by product and clientAccount and get the sum of transctionAmount
+		// Group them by product and clientAccount and get the sum of transctionAmount
 		Map<Product, Map<ClientAccount, Long>> summaryMap = transactions.stream().collect(
 				Collectors.groupingBy(Transaction::getProduct, Collectors.groupingBy(Transaction::getClientAccount,
 						Collectors.summingLong(Transaction::getTransactionAmount))));
