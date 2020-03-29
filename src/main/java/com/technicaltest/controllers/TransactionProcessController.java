@@ -69,11 +69,13 @@ public class TransactionProcessController {
 		response.setContentType("text/csv");
 		response.setHeader("Content-Disposition", "attachment; file=Output.csv");
 
-		LocalDate selectedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-		try {
-			reportGenerationService.generateDailySummaryReport(response.getWriter(), selectedDate);
-		} catch (IOException e) {
-			LOGGER.error("Error processing output file", e);
+		if (!date.isEmpty()) {
+			LocalDate selectedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+			try {
+				reportGenerationService.generateDailySummaryReport(response.getWriter(), selectedDate);
+			} catch (IOException e) {
+				LOGGER.error("Error processing output file", e);
+			} 
 		}
 	}
 
