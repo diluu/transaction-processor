@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -94,6 +95,14 @@ public class ReportGenerationServiceTest {
 		transaction2.setProduct(product);
 		transactionRepository.save(transaction2);
 
+	}
+	
+	@After
+	public void cleanUp() {
+		transactionRepository.deleteAll();
+		productRepository.deleteAll();
+		clientAccountRepository.deleteAll();
+		clientRepository.deleteAll();
 	}
 
 	/**

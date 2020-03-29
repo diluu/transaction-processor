@@ -54,13 +54,19 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 		String clientType = line.substring(3, 7).trim();
 		String clientNumber = line.substring(7, 11).trim();
 
-		Client client = new Client();
-		client.setClientType(clientType);
-		client.setClientNumber(clientNumber);
-		if (clients.contains(client)) {
-			client = clients.get(clients.indexOf(client));
+		List<Client> existingClients = clientRepository.findByClientTypeAndClientNumber(clientType, clientNumber);
+		Client client = null;
+		if (!existingClients.isEmpty()) {
+			client = existingClients.get(0);
 		} else {
-			clients.add(client);
+			client = new Client();
+			client.setClientType(clientType);
+			client.setClientNumber(clientNumber);
+			if (clients.contains(client)) {
+				client = clients.get(clients.indexOf(client));
+			} else {
+				clients.add(client);
+			}
 		}
 		return client;
 	}
@@ -78,14 +84,24 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 		String accountNumber = line.substring(11, 15).trim();
 		String subAccountNumber = line.substring(15, 19).trim();
 
-		ClientAccount account = new ClientAccount();
-		account.setClient(client);
-		account.setAccountNumber(accountNumber);
-		account.setSubAccountNumber(subAccountNumber);
-		if (clientAccounts.contains(account)) {
-			account = clientAccounts.get(clientAccounts.indexOf(account));
+		List<ClientAccount> existingAccounts = null;
+		if (client.getId() != null) {
+			existingAccounts = clientAccountRepository.findByClientAndAccountNumberAndSubAccountNumber(client,
+					accountNumber, subAccountNumber);
+		}
+		ClientAccount account = null;
+		if (existingAccounts != null && !existingAccounts.isEmpty()) {
+			account = clientAccounts.get(0);
 		} else {
-			clientAccounts.add(account);
+			account = new ClientAccount();
+			account.setClient(client);
+			account.setAccountNumber(accountNumber);
+			account.setSubAccountNumber(subAccountNumber);
+			if (clientAccounts.contains(account)) {
+				account = clientAccounts.get(clientAccounts.indexOf(account));
+			} else {
+				clientAccounts.add(account);
+			}
 		}
 		return account;
 	}
@@ -105,15 +121,23 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 		String symbol = line.substring(31, 37).trim();
 		LocalDate expirationDate = LocalDate.parse(line.substring(37, 45), FORMATTER);
 
-		Product product = new Product();
-		product.setExchangeCode(exchangeCode);
-		product.setExpirationDate(expirationDate);
-		product.setProductGroupCode(productGroupCode);
-		product.setSymbol(symbol);
-		if (products.contains(product)) {
-			product = products.get(products.indexOf(product));
+		List<Product> existingProducts = productRepository
+				.findByExchangeCodeAndExpirationDateAndProductGroupCodeAndSymbol(exchangeCode, expirationDate,
+						productGroupCode, symbol);
+		Product product = null;
+		if (!existingProducts.isEmpty()) {
+			product = existingProducts.get(0);
 		} else {
-			products.add(product);
+			product = new Product();
+			product.setExchangeCode(exchangeCode);
+			product.setExpirationDate(expirationDate);
+			product.setProductGroupCode(productGroupCode);
+			product.setSymbol(symbol);
+			if (products.contains(product)) {
+				product = products.get(products.indexOf(product));
+			} else {
+				products.add(product);
+			}
 		}
 		return product;
 	}

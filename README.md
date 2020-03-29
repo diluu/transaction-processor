@@ -38,6 +38,9 @@
 #Assumptions Made
 =============================================================
 *  Transaction amount was calculated as (Long quantity - Short quantity) as given in the requirement specification
+*  No checks are added to handle to check wether input file is formatted, assuming it is in correct format for this test
+*  It assumes that transactions for same date can be in multiple input files so the transactions from a second import add duplictate records
+
 
 ---------------------------------------------------------------------------------------
 #Enhancements and known issues
