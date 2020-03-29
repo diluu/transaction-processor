@@ -145,10 +145,9 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 	 * 
 	 * Read the input file line by line and add records to the database
 	 * @param inputFile input text file
-	 * @return
 	 * @throws IOException
 	 */
-	public List<Transaction> processInputFile(byte[] inputFile) throws IOException {
+	public void processInputFile(byte[] inputFile) throws IOException {
 		LOGGER.debug("in method processInputFile()");
 
 		//Keep clients, clientAccounts, products and transactions in memory and save as batches
@@ -173,7 +172,6 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 			productRepository.saveAll(products);
 			transactionRepository.saveAll(transactions);
 		}
-		return transactions;
 	}
 
 }
