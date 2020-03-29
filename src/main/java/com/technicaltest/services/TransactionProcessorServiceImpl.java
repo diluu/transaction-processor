@@ -91,7 +91,7 @@ public class TransactionProcessorServiceImpl implements TransactionProcessorServ
 		}
 		ClientAccount account = null;
 		if (existingAccounts != null && !existingAccounts.isEmpty()) {
-			account = clientAccounts.get(0);
+			account = existingAccounts.get(0);
 		} else {
 			account = new ClientAccount();
 			account.setClient(client);
