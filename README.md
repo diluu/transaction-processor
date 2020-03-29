@@ -1,4 +1,4 @@
-==============================================================
+
 #Technical Task for Processing Future Transactions
 ==============================================================
 *  My solution is build with Java8 and Spring Boot 2.2.6
@@ -12,7 +12,8 @@
 
 *  Sample daily summary report 'Ouput.csv' and a sample log file can be found in submission directory
 
-==============================================================
+---------------------------------------------------------------------------
+
 #Instruction to build and run the application
 ==============================================================
 *  run.sh file does three steps
@@ -31,13 +32,14 @@
 
 * Navigate to 'http://localhost:8080/transactions'
 
+---------------------------------------------------------------------------------------
 
-=============================================================
+
 #Assumptions Made
 =============================================================
 *  Transaction amount was calculated as (Long quantity - Short quantity) as given in the requirement specification
 
-============================================================
+---------------------------------------------------------------------------------------
 #Enhancements and known issues
 ============================================================
 * Due to the limited time the UI is done as plain HTML with JQuery only used for date picker
